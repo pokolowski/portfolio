@@ -1,0 +1,21 @@
+.icon {
+    /* width: 200px; */
+    height: 35px;
+    position: absolute;
+    cursor:pointer;
+    /* display: none; */
+    animation: move .8s linear infinite forwards;
+}
+
+.rotateLeft{
+    transform: rotate(90deg);
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(-150%);
+    }
+}

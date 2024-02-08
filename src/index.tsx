@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MainPage from './components/views/mainPage';
+import About from 'components/views/about';
+import { store } from 'components/Redux/store';
+import { Provider } from 'react-redux';
+import Contact from 'components/views/contact';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <MainPage />
+      <About />
+      <Contact />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -8,6 +8,10 @@ import About from 'components/views/about';
 import { store } from 'components/Redux/store';
 import { Provider } from 'react-redux';
 import Contact from 'components/views/contact';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

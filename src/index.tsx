@@ -12,6 +12,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import Skills from 'components/views/skills';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,6 +24,7 @@ root.render(
       <MainPage />
       <About />
       <Contact />
+      <Skills />
     </Provider>
   </React.StrictMode>
 );

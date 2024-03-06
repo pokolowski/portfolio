@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import styles from './goBack.module.css';
+import { useDispatch } from "react-redux";
+import { displayView } from "components/Redux/features/displayView/displaySlice";
 
 const Wrapper = styled.div`
 position: absolute;
@@ -34,7 +36,8 @@ type PropsTypes = {
 }
 
 const GoBack = ({setScrollFlag, rotate} : PropsTypes) => {
-    return ( <Wrapper onClick={() => setScrollFlag(true)}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
+    const dispatch = useDispatch();
+    return ( <Wrapper onClick={() => {setScrollFlag(true); dispatch(displayView('mainPage'))}}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
 }
  
 export default GoBack;

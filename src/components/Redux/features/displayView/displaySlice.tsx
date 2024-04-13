@@ -15,6 +15,7 @@ export const displaySlice = createSlice( {
     initialState,
     reducers: {
         displayView: (state, action: PayloadAction<string>) => {
+            console.log(action.payload);
             state.value = action.payload;
         }
     }

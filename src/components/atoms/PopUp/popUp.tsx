@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 const Wrapper = styled.div`
 width: 60vw;
 height: 50vh;
-position: fixed;
+position: sticky;
 background-color: white;
-top: 50%;
+top: 25%;
 left: 50%;
 transform: translate(-50%, -50%);
 filter: blur(0);

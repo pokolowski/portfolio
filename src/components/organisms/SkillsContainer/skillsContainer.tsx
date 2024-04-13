@@ -78,7 +78,7 @@ const SkillsContainer = () => {
 
     return ( 
         <>
-        {popup ? <PopUp hidePopUp={SetPopUpHandler} skillDesc={SkillsDesc} title={popuptext} />: ''}
+        
     <Wrapper blur={popup}>
         <Desc>
             <Title>I offer you my skills...</Title>
@@ -94,6 +94,7 @@ const SkillsContainer = () => {
         <Skill title="EXPRESS" logo={EXPRESSLOGO} showPopUp={SetPopUpHandler}/>
         <Skill title="SQL" logo={SQLLOGO} showPopUp={SetPopUpHandler}/>
     </Wrapper>
+    {popup ? <PopUp hidePopUp={SetPopUpHandler} skillDesc={SkillsDesc} title={popuptext} />: ''}
         </>
      );
 }

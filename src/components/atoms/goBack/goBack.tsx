@@ -10,6 +10,8 @@ const Wrapper = styled.div`
 position: absolute;
 bottom: 50px;
 right: 50px;
+// left:0px;
+// transform: translateX(500%);
 background-color: #DEEE22;
 width: 70px;
 height: 70px;
@@ -37,7 +39,7 @@ type PropsTypes = {
 
 const GoBack = ({setScrollFlag, rotate} : PropsTypes) => {
     const dispatch = useDispatch();
-    return ( <Wrapper onClick={() => {setScrollFlag(true); dispatch(displayView('mainPage'))}}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
+    return ( <Wrapper onClick={() => {setScrollFlag(false); dispatch(displayView('mainPage'))}}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
 }
  
 export default GoBack;

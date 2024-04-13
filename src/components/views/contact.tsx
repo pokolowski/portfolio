@@ -18,10 +18,10 @@ top: 0;
 left: 0;
 // animation: slideIn .5s linear both;
 display: flex;
-${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideIn .5s linear both;':'animation: slideOut .5s linear both;'}
+${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideInContact .5s linear both;':'animation: slideOutContact .5s linear both;'}
 justify-content: center;
 
-@keyframes slideIn {
+@keyframes slideInContact {
     0%{
         transform: translateX(-100%);
     }
@@ -29,7 +29,7 @@ justify-content: center;
         transform: translate(0%);
     }
 }
-@keyframes slideOut {
+@keyframes slideOutContact {
     0%{
         transform: translateX(0%);
     }
@@ -58,6 +58,7 @@ const Contact = () => {
         }
         if(display != 'contact'){
             setScrollFlag(false);
+            // setFirstRun(true);
         }
     }, [display]);
 

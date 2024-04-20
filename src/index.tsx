@@ -14,6 +14,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Skills from 'components/views/skills';
 import CommingSoon from 'components/views/commingSoon';
+import Projects from 'components/views/projects';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -26,6 +27,7 @@ root.render(
       <About />
       <Contact />
       <Skills />
+      <Projects />
     </Provider>
     {/* <CommingSoon /> */}
   </React.StrictMode>

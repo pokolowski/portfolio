@@ -53,10 +53,15 @@ const Description = styled.p`
 color: grey;
 `
 
+type Props = {
+    popup: boolean,
+    SetPopUpHandler: () => void,
+    popuptext: string
+}
 
-const SkillsContainer = () => {
-    const [popup, setPopUp] = useState<boolean>(false);
-    const [popuptext, setpopuptext] = useState<string>('');
+const SkillsContainer = ({popup, SetPopUpHandler, popuptext} : Props) => {
+    // const [popup, setPopUp] = useState<boolean>(false);
+    // const [popuptext, setpopuptext] = useState<string>('');
 
     const SkillsDesc = [
         {skill:'HTML', Desc:"As a frontend developer proficient in HTML, I excel in crafting clean, semantic markup using the latest HTML5 standards. My expertise extends to integrating HTML seamlessly with CSS and JavaScript to create visually stunning, responsive interfaces. "},
@@ -70,10 +75,10 @@ const SkillsContainer = () => {
         {skill: 'SQL', Desc:'With a solid foundation from technical education and  studies, I possess advanced SQL skills, allowing me to craft complex queries tailored to specific data requirements. My expertise extends to database design and administration.'}
     ]
 
-    const SetPopUpHandler = (text='') => {
-        setpopuptext(text);
-        setPopUp(!popup);
-    }
+    // const SetPopUpHandler = (text='') => {
+    //     setpopuptext(text);
+    //     setPopUp(!popup);
+    // }
 
 
     return ( 
@@ -94,7 +99,7 @@ const SkillsContainer = () => {
         <Skill title="EXPRESS" logo={EXPRESSLOGO} showPopUp={SetPopUpHandler}/>
         <Skill title="SQL" logo={SQLLOGO} showPopUp={SetPopUpHandler}/>
     </Wrapper>
-    {popup ? <PopUp hidePopUp={SetPopUpHandler} skillDesc={SkillsDesc} title={popuptext} />: ''}
+    {/* {popup ? <PopUp hidePopUp={SetPopUpHandler} skillDesc={SkillsDesc} title={popuptext} />: ''} */}
         </>
      );
 }

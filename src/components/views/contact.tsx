@@ -11,6 +11,7 @@ const Wrapper = styled.div<{$displayTogle: boolean, $scrollFlag: boolean, $first
 width: 100%;
 height:100vh;
 background: rgb(2,0,36);
+// background:white;
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
 // background-color: red;
 position: absolute;

@@ -15,7 +15,8 @@ justify-content: space-around;`
 const ContactDataContainer = styled.div`
 position: relative;
 // border: 2px solid white;
-background-color:#AF8FE3;
+// background-color:#AF8FE3;
+background-color: white;
 border-radius: 30px;
 width: 80%;
 height: 80%;

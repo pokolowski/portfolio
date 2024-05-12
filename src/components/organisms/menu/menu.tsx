@@ -5,13 +5,24 @@ import Navigate from 'components/molecules/Navigate/navigate';
 import Photo from 'assets/zdj2.png';
 
 const Wrapper = styled.div`
-width: 20vw;
-height: 20vw;
+width: 80vw;
+height: 80vw;
 // background-color: red;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-align-items: center;`
+align-items: center;
+@media only screen and (min-width: 700px){
+    // min-width:500px;
+    // min-height: 200px;
+    width: 40vw;
+    height: 40vw;
+}
+@media only screen and (min-width: 1000px){
+    width: 30vw;
+    height: 20vw;
+}
+`
 
 const Menu = () => {
     return ( <Wrapper>

@@ -14,7 +14,10 @@ align-items: center;
 justify-content: space-around;
 color: white;
 font-family: Montserrat;
-font-weight: 200;`
+font-weight: 200;
+@media only screen and (max-width:390px){
+    flex-direction: column;
+}`
 
  const Navigate = () => {
     const dispatch = useDispatch();

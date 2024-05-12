@@ -4,13 +4,18 @@ import AboutText from 'components/molecules/AboutText/aboutText';
 
 const Wrapper = styled.div`
 width: 90%;
-height: 90vh;
-// background-color: black;
+min-height: 90vh;
+background-color: black;
 box-sizing: border-box;
 padding:30px;
 // opacity: .1;
 display: flex;
 justify-content: space-between;
+
+
+@media only screen and (min-width: 700px){
+
+}
 
 `
 

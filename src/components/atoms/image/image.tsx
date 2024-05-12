@@ -2,8 +2,11 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div<{bg : string}>`
-width: 250px;
-height: 250px;
+// position: absolute;
+min-width: 50vw;
+min-height: 50vw ;
+max-width: 220px;
+max-height: 220px;
 border-radius: 50%;
 background-color: #AEA73F;
 background-image: url(${props => props.bg});
@@ -23,6 +26,24 @@ animation: pulse 2s infinite;
 		// transform: scale(.95);
 		box-shadow: 0 0 10px 50px rgba(0, 0, 0, 0);
 	}
+}
+@media only screen and (min-width: 700px){
+	min-width: 20vw;
+	min-height: 20vw;
+	max-width: 220px;
+	max-height: 220px;
+}
+@media only screen and (min-width: 1000px){
+	min-width: 15vw;
+	min-height: 15vw;
+	max-width: 220px;
+	max-height: 220px;
+}
+@media only screen and (min-width: 1200px){
+	min-width: 12vw;
+	min-height: 12vw;
+	max-width: 220px;
+	max-height: 220px;
 }
 `
 

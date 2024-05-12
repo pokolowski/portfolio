@@ -22,9 +22,10 @@ height: 100px;
 // background-color: red;
 background-image:url(${props => props.bgImage});
 background-repeat: no-repeat;
-background-size: 200px;
+background-size: 150px;
 background-position: center;
 position: relative;
+cursor: pointer;
 &:after{
     content: '${props => props.title}';
     position: absolute;
@@ -34,8 +35,10 @@ position: relative;
 }
 `
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.a`
 font-family: Montserrat;
+font-size: 12px;
+color:lightblue;
 height: 50px;`
 
 const StackContainer = styled.div`
@@ -57,6 +60,8 @@ background-image:url(${props => props.path});
 background-size: 40px;
 background-repeat: no-repeat;
 `
+const Stack = styled.p<{color: string}>`
+color: ${props => props.color === "HTML" ? "#F24822": props.color === "CSS" ? "#0511F2" : props.color === "REACT.JS" ? "#53C0DD" : props.color === "REDUX" ? "#724EBF": props.color === "SQL" ? "#F27405": props.color === "Socket IO" ? "#D9D9D9" : props.color === "TYPESCRIPT" ? "#2C7BBF": props.color === "EXPRESS" ? "#595959": ""} `
 
 const GoTo = styled.div``
 
@@ -71,11 +76,13 @@ type Props={
 const SingleProject = ({title='', logo, stack=[], description=''}: Props) => {
     return ( 
         <Wrapper>
-            <LogoContainer bgImage={logo} title={title} />
-            {/* <TitleContainer> {title} </TitleContainer> */}
+        <LogoContainer bgImage={logo} title={title} />
+            
+            {/* <TitleContainer href="www.ankietujto.pl"> go to page</TitleContainer> */}
             <StackContainer>
                 {stack.map((singleStack) => (
-                    <StackLogo path={singleStack} />
+                    // <StackLogo path={singleStack} />
+                    <Stack color={singleStack}>{singleStack}</Stack>
                 ))}
             </StackContainer>
             <DescContainer>{description}</DescContainer>

@@ -10,15 +10,25 @@ import { displayView } from 'components/Redux/features/displayView/displaySlice'
 
 const Wrapper = styled.div<{displayToggle: boolean}>`
 width: 100%;
-height: 100vh;
-background: rgb(2,0,36);
-background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
+height: 500vh;
+
+// background: rgb(2,0,36);
+// background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
 position: relative;
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
+background-color: red;
 ${props => props.displayToggle ? '': 'display:none;'}
-// display: none;`
+// display: none;
+// overflow:hidden;
+
+
+@media only screen and (min-width: 700px){
+    height: 100vh;
+    flex-direction: row;
+}`
 
 const About = () => {
     const display = useSelector((state:RootState) => state.display.value);
@@ -55,7 +65,9 @@ const About = () => {
 
 
     return ( <Wrapper displayToggle={display === 'about' ? true:false} id='about'>
-        <AboutContainer /><TimeLine /> <GoBack  setScrollFlag={setScrollFlag} />
+        <AboutContainer />
+        <TimeLine /> 
+        <GoBack  setScrollFlag={setScrollFlag} />
     </Wrapper>  );
 }
  

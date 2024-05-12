@@ -2,11 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-height: 100%;
-width: 50%;
-// background-color: red;
+height:100%;
+min-height: 600px;
+width: 100%;
+background-color: blue;
 display: flex;
 align-items: center;
+// display:none;
+@media only screen and (min-width: 700px){
+    height: 100%;
+    width: 50%;
+}
 `
 const Line = styled.div`
 width: 10px;

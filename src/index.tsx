@@ -25,9 +25,9 @@ root.render(
     <Provider store={store}>
       <MainPage />
       <About />
-      <Contact />
-      <Skills />
-      <Projects />
+      {/* <Contact /> */}
+      {/* <Skills /> */}
+      {/* <Projects /> */}
     </Provider>
     {/* <CommingSoon /> */}
   </React.StrictMode>

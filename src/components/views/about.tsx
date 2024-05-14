@@ -10,24 +10,30 @@ import { displayView } from 'components/Redux/features/displayView/displaySlice'
 
 const Wrapper = styled.div<{displayToggle: boolean}>`
 width: 100%;
-height: 500vh;
-
-// background: rgb(2,0,36);
-// background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
+// height:120vh;
+min-height: 200vh;
+background: rgb(2,0,36);
+background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
 position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+justify-content: space-around;
 background-color: red;
 ${props => props.displayToggle ? '': 'display:none;'}
 // display: none;
-// overflow:hidden;
+overflow:hidden;
+// box-sizing:border-box;
+flex-wrap:wrap;
 
 
 @media only screen and (min-width: 700px){
-    height: 100vh;
+    // height:100vh;
+    min-height: 100vh;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    // box-sizing:border-box;
 }`
 
 const About = () => {

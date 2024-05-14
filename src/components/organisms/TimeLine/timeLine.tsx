@@ -2,24 +2,35 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-height:100%;
-min-height: 600px;
+height:90vh;
+// min-height: 90vh;
+// max-height: 700px;
+box-sizing: border-box;
 width: 100%;
-background-color: blue;
+// background-color: blue;
 display: flex;
 align-items: center;
-// display:none;
+// justify-content: center;
+// margin-left: 20%;
+position:relative;
+
+
 @media only screen and (min-width: 700px){
-    height: 100%;
+    
+    // min-height: 90vh;
     width: 50%;
 }
 `
+
 const Line = styled.div`
 width: 10px;
-height: 80%;
+min-height: 500px;
+height: 90%;
+
 border-radius: 20px;
 background-color:#3D0385;
 position: relative;
+left: 20%;
 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 animation: visible .5s 2s linear both;
 
@@ -30,7 +41,12 @@ animation: visible .5s 2s linear both;
     100%{
         opacity: 1;
     }
-}`
+}
+@media only screen and (min-width: 700px){
+    left: 0;
+}
+
+`
 
 const Color = styled.div`
 background-color: #6304D6;

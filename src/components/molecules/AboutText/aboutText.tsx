@@ -2,10 +2,12 @@ import react from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+position: relative;
+height: 100%;
 color: white;
 font-size: 25px;
 font-family: Montserrat;
-// background-color: black;
+// background-color: white;
 box-sizing: border-box;
 padding:30px;
 `
@@ -14,7 +16,7 @@ position: relative;
 // left: -50%;
 line-height: 30px;
 // background-color: #1F1F1F;
-font-size: 25px;
+font-size: 15px;
 // font-family:Montserrat;
 // display: none;
 width: 0%;
@@ -30,6 +32,9 @@ animation: textIn .7s 1s linear both;
         left:0;
         opacity: 1;
     }
+}
+@media only screen and (min-widtH: 700px){
+    font-size: 25px;
 }
 `
 const Typing = styled.span`

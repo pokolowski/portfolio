@@ -4,24 +4,26 @@ import ProjectsContainer from 'components/molecules/ProjectsContainer/projectsCo
 
 const Wrapper = styled.div`
 width: 90%;
-height:100vh; 
+height:150vh;
+position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
-// background-color: lightblue;
+background-color: lightblue;
 box-sizing: border-box;
 padding:30px;
 `
 const Description = styled.div`
 width:100%;
-height: 20%;
+min-height: 20%;
 font-family: Montserrat;
 color: white;
 // background-color: black;
 display: flex;
 flex-direction: column;
 align-items: center;
+overflow:hidden;
 
 `
 

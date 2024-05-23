@@ -11,12 +11,23 @@ import REDUXLogo from 'assets/redux.png';
 
 
 const Wrapper = styled.div`
-width: 70%;
-height: 60%;
-// background-color: lightyellow; 
+width: 80%;
+min-height: 80vh;
+height: 1px;
+position: relative;
+background-color: lightyellow; 
 display: flex;
-flex-direction: row;
+flex-direction: column;
+flex-wrap:nowrap;
 justify-content: space-around;
+// overflow: hidden;
+// margin-bottom: 300px;
+
+@media only screen and (min-width:1200px){
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
 `
 
 const ProjectsContainer = () => {

@@ -27,7 +27,7 @@ root.render(
       <About />
       {/* <Contact /> */}
       {/* <Skills /> */}
-      {/* <Projects /> */}
+      <Projects />
     </Provider>
     {/* <CommingSoon /> */}
   </React.StrictMode>

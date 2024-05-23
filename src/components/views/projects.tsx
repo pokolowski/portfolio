@@ -9,11 +9,12 @@ import ProjectsViewContainer from 'components/organisms/ProjectsViewContainer/pr
 
 const Wrapper = styled.div<{$displayTogle: boolean, $scrollFlag: boolean, $firstRun: boolean}>`
 width: 100%;
-height:100vh;
+height:1px;
+min-height:100vh;
 background: rgb(2,0,36);
 // background:white;
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
-// background-color: red;
+// background: red;
 position: absolute;
 top: 0;
 left: 0;

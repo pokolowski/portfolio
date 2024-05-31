@@ -9,7 +9,7 @@ import ProjectsViewContainer from 'components/organisms/ProjectsViewContainer/pr
 
 const Wrapper = styled.div<{$displayTogle: boolean, $scrollFlag: boolean, $firstRun: boolean}>`
 width: 100%;
-height:1px;
+min-width: 350px;
 min-height:100vh;
 background: rgb(2,0,36);
 // background:white;

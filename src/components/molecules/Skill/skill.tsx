@@ -2,7 +2,7 @@ import react from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-width: 23%;
+width: 50%;
 height: 250px;
 // border: 2px solid black;
 display: flex;
@@ -13,6 +13,10 @@ align-items: center;
 border-radius: 20px;
 padding: 10px;
 box-sizing: border-box;
+
+@media only screen and (min-width: 1200px){
+    width: 23%
+}
 
 `
 
@@ -38,7 +42,7 @@ font-weight: bold;
 cursor: pointer;`
 
 const Container =  styled.div`
-width: 50%;
+width: 70%;
 height: 100%;
 border-radius: 20px;
 background-color: white;
@@ -48,7 +52,10 @@ align-items: center;
 justify-content: space-between;
 padding: 10px;
 box-sizing: border-box;
-box-shadow: black 0px 0px 50px 0px;`
+box-shadow: black 0px 0px 50px 0px;
+@media only screen and (min-width: 1200px){
+    width: 50%
+}`
 
 
 

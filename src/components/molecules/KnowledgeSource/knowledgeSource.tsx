@@ -5,23 +5,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Skill from '../Skill/skill';
 
 const Wrapper = styled.div`
-width: 18%;
-height: 70%;
+width: 48%;
+min-height: 70%;
 border: 1px solid #6143A1;
 display: flex;
+flex:1;
 flex-direction: column;
 align-items: ;
 // background-color: red;
 padding: 30px;
 box-sizing: border-box;
 // flex-wrap: wrap;
+@media only screen and (min-width: 1200px){
+    width: 18%;
+}
 `
 
 const Title = styled.div`
 width: 100%;
-height: 50px;
+min-height: 50px;
 background-color: #E0D1FF;
-text-align: center;`
+text-align: center;
+display:flex;
+justify-content:center;
+align-items: center;`
 
 const SkillsContainer = styled.div`
 width: 100%;
@@ -37,13 +44,16 @@ justify-content: space-around;
 align-items: flex-start;`
 
 const Logo = styled.div<{png: string}>`
-width: 30%;
+width: 50%;
 height: 50px;
 background-image:url(${props => props.png});
 background-repeat: no-repeat;
 // border: 2px solid red;
 background-size: contain;
-overflow: hidden;`
+overflow: hidden;
+@media only screen (min-width: 1200px){
+    width: 30%;
+}`
 
 
 type Props = {
@@ -54,7 +64,7 @@ type Props = {
 const KnowledgeSource = ({title, skills} :Props) => {
     return(
     <Wrapper>
-        <Title> <FontAwesomeIcon icon={faSchool} /><br/>{title}</Title>
+        <Title> <p><FontAwesomeIcon icon={faSchool} /><br/>{title}</p></Title>
         <SkillsContainer>
             {skills.map((skill) => (
                 <Logo png={skill} />

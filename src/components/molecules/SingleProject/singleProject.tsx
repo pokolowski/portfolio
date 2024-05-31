@@ -3,9 +3,8 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 width: 100%;
-min-height: 40%;
-height: 1px;
-flex:1;
+min-height: 40vh;
+// flex:1;
 // background-color: lightgreen;
 display: flex;
 flex-direction: column;
@@ -19,15 +18,18 @@ box-sizing: border-box;
 padding: 20px;
 overflow:hidden;
 position: relative;
+margin-bottom: 50px;
+
 
 @media only screen and (min-width: 1200px){
     width: 30%;
+    flex-grow: 
     height: 100%;
 }
 `
 const LogoContainer = styled.div<{bgImage: string, title?:string}>`
 width: 100%;
-height: 120px;
+height: 220px;
 // background-color: red;
 background-image:url(${props => props.bgImage});
 background-repeat: no-repeat;
@@ -79,7 +81,8 @@ background-size: 40px;
 background-repeat: no-repeat;
 `
 const Stack = styled.p<{color: string}>`
-color: ${props => props.color === "HTML" ? "#F24822": props.color === "CSS" ? "#0511F2" : props.color === "REACT.JS" ? "#53C0DD" : props.color === "REDUX" ? "#724EBF": props.color === "SQL" ? "#F27405": props.color === "Socket IO" ? "#D9D9D9" : props.color === "TYPESCRIPT" ? "#2C7BBF": props.color === "EXPRESS" ? "#595959": ""} `
+color: ${props => props.color === "HTML" ? "#F24822": props.color === "CSS" ? "#0511F2" : props.color === "REACT.JS" ? "#53C0DD" : props.color === "REDUX" ? "#724EBF": props.color === "SQL" ? "#F27405": props.color === "Socket IO" ? "#D9D9D9" : props.color === "TYPESCRIPT" ? "#2C7BBF": props.color === "EXPRESS" ? "#595959": ""};
+margin-right: 10px; `
 
 const GoTo = styled.div``
 

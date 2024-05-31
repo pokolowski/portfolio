@@ -26,7 +26,7 @@ root.render(
       <MainPage />
       <About />
       {/* <Contact /> */}
-      {/* <Skills /> */}
+      <Skills />
       <Projects />
     </Provider>
     {/* <CommingSoon /> */}

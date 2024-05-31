@@ -14,10 +14,11 @@ z-index:1;
 display: flex;
 justify-content:center;
 align-items: center;
+// background:red;
 `
 const Wrapper = styled.div`
-width: 60vw;
-height: 50vh;
+width: 80vw;
+min-height: 50vh;
 // position: sticky;
 background-color: white;
 // top: 50px;
@@ -33,6 +34,9 @@ border-radius: 20px;
 box-shadow: black 0px 0px 50px 0px;
 box-sizing: border-box;
 padding: 20px;
+@media only screen and (min-width:1200px){
+    width: 65vw;
+}
 `
 const H1=styled.h1`
 font-family: Montserrat;
@@ -41,7 +45,8 @@ color: #13013B;`
 const Paragraph=styled.span`
 color: grey;
 text-align: justify;
-font-family: Montserrat;`
+font-family: Montserrat;
+margin-bottom: 20px;`
 
 interface SkillDescription {
     skill: string;

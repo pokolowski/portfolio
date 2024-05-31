@@ -15,11 +15,12 @@ import PopUp from 'components/atoms/PopUp/popUp';
 
 
 const Wrapper  = styled.div<{blur: boolean}>`
-width: 80%;
+width: 90%;
 min-height: 80vh;
 position: relative;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
+// background:red;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -30,6 +31,10 @@ ${props => props.blur ? 'filter:blur(2px);': ''}
 transition:.2s;
 box-sizing: border-box;
 margin-bottom: 100px;
+
+@media only screen and (min-width: 1200px){
+    width: 80%;
+}
 `
 
 const Desc = styled.div`
@@ -48,9 +53,11 @@ margin-bottom: 50px;`
 
 const Title = styled.h1`
 color: rgb(2,0,36);
+text-align:center;
 `;
 const Description = styled.p`
 color: grey;
+text-align:center;
 `
 
 type Props = {

@@ -13,7 +13,7 @@ import SQLLOGO from 'assets/sql.png';
 
 const Wrapper  = styled.div`
 width: 80%;
-height: 50vh;
+min-height: 50vh;
 position: relative;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
@@ -34,8 +34,9 @@ bos-sizing: border-box;
 padding: 10px;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
-font-family: Montserrat;`
+justify-content: center;
+font-family: Montserrat;
+text-align:center;`
 
 const Title = styled.h1`
 color: rgb(2,0,36);

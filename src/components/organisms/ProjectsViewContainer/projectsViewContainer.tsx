@@ -4,15 +4,16 @@ import ProjectsContainer from 'components/molecules/ProjectsContainer/projectsCo
 
 const Wrapper = styled.div`
 width: 90%;
-height:150vh;
+min-height:100vh;
 position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
-background-color: lightblue;
+// background-color: lightblue;
 box-sizing: border-box;
 padding:30px;
+margin-bottom:50px;
 `
 const Description = styled.div`
 width:100%;

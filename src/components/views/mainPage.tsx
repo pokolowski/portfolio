@@ -5,7 +5,7 @@ import Bg from 'assets/background.png'
 
 const Wrapper = styled.div`
 width: 100%;
-height: 100vh;
+min-height: 100vh;
 min-width:350px;
 // background-color:#323133;
 // background-image: url(${Bg});
@@ -16,6 +16,7 @@ display: flex;
 overflow:hidden;
 justify-content: center;
 align-items: center;
+z-index:5;
  `
 
 const MainPage = () => {

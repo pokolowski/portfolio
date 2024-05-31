@@ -17,7 +17,7 @@ padding: 30px;
 box-sizing: border-box;
 // flex-wrap: wrap;
 @media only screen and (min-width: 1200px){
-    width: 18%;
+    // width: 18%;
 }
 `
 
@@ -44,13 +44,16 @@ justify-content: space-around;
 align-items: flex-start;`
 
 const Logo = styled.div<{png: string}>`
-width: 50%;
-height: 50px;
+width: 50px;
+min-height: 50px;
 background-image:url(${props => props.png});
 background-repeat: no-repeat;
 // border: 2px solid red;
 background-size: contain;
+background-position: center;
+// background:red;
 overflow: hidden;
+// border: 1px solid yellow;
 @media only screen (min-width: 1200px){
     width: 30%;
 }`

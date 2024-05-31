@@ -25,7 +25,7 @@ root.render(
     <Provider store={store}>
       <MainPage />
       <About />
-      {/* <Contact /> */}
+      <Contact />
       <Skills />
       <Projects />
     </Provider>

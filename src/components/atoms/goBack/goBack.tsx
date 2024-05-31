@@ -34,12 +34,13 @@ animation: show .5s 1s both;
 
 type PropsTypes = {
     setScrollFlag: React.Dispatch<React.SetStateAction<any>>,
-    rotate?: string
+    rotate?: string,
+    handleOnClick?: () => void
 }
 
-const GoBack = ({setScrollFlag, rotate} : PropsTypes) => {
+const GoBack = ({setScrollFlag, rotate, handleOnClick} : PropsTypes) => {
     const dispatch = useDispatch();
-    return ( <Wrapper onClick={() => {setScrollFlag(false); dispatch(displayView('mainPage'))}}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
+    return ( <Wrapper onClick={() => {setScrollFlag(false); dispatch(displayView('mainPage')); handleOnClick && handleOnClick();}}> <FontAwesomeIcon icon={faArrowUp} className={`${styles.icon} ${rotate ? styles.rotateLeft:''}`} /> </Wrapper> );
 }
  
 export default GoBack;

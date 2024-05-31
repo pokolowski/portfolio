@@ -21,8 +21,8 @@ flex-direction: column;
 align-items: center;
 justify-content: space-around;
 overflow:hidden;
-${props => props.$displayToggleSkills ? '': 'display:none;'}
-${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'animation: slideInSkills .5s linear both;':'animation: slideOutSkills .5s linear both;'}
+// ${props => props.$displayToggleSkills ? '': 'display:none;'}
+${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'animation: slideInSkills .5s linear both;':'animation: slideOutSkills .5s 1s linear both;'}
 
 @keyframes slideInSkills {
     0%{
@@ -38,6 +38,7 @@ ${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'an
     }
     100%{
         transform: translate(100%);
+        display:none;
     }
 }`
 
@@ -74,13 +75,22 @@ const Skills = () => {
         setpopuptext(text);
         setPopUp(!popup);
     }
+    const handleOnClick = () => {
+        const top = document.getElementById("skills");
+        if(top){
+            top.scrollIntoView({behavior: 'smooth'});
+        }
+        else{
+            console.log('Top is null');
+        }
+    }
 
 
     return ( <Wrapper $displayToggleSkills={display == 'skills' ? true: false} $scrollFlagSkills={scrollFlag} $firstRunSkills={firstRunSkills} id="skills">
         {popup ? <PopUp hidePopUp={SetPopUpHandler} skillDesc={SkillsDesc} title={popuptext} />: ''}
         <SkillsContainer popup={popup} SetPopUpHandler={SetPopUpHandler}  popuptext={popuptext}/>
         <CursesContainer />
-        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag}/>
+        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag} handleOnClick={handleOnClick}/>
         
     </Wrapper> );
 }

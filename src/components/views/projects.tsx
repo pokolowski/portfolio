@@ -21,7 +21,7 @@ left: 0;
 // animation: slideIn .5s linear both;
 display: flex;
 // overflow:hidden;
-${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideInProjects .5s linear both;':'animation: slideOutProjects .5s linear both;'}
+${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideInProjects .5s linear both;':'animation: slideOutProjects .5s 1s linear both;'}
 justify-content: center;
 
 
@@ -51,7 +51,7 @@ const Projects = () => {
     const [firstRun, setFirstRun] = useState<boolean>(true);
 
     useEffect( () => {
-        console.log(display);
+        // console.log(display);
         if(display === 'projects' && scrollFlag===false){
             setScrollFlag(true);
             setFirstRun(false);
@@ -60,11 +60,20 @@ const Projects = () => {
             setScrollFlag(false);
         }
     }, [display]);
+    const handleOnClick = () => {
+        const top = document.getElementById("projects");
+        if(top){
+            top.scrollIntoView({behavior: 'smooth'});
+        }
+        else{
+            console.log('Top is null');
+        }
+    }
 
     return ( 
     <Wrapper $displayTogle= {display === 'projects' ? true:false} $scrollFlag={scrollFlag} $firstRun={firstRun} id="projects">
         <ProjectsViewContainer />
-        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag}/>
+        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag} handleOnClick={handleOnClick}/>
     </Wrapper>  );
 }
  

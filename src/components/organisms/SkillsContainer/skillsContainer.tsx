@@ -14,7 +14,7 @@ import PopUp from 'components/atoms/PopUp/popUp';
 
 
 
-const Wrapper  = styled.div<{blur: boolean}>`
+const Wrapper  = styled.div<{$blur: boolean}>`
 width: 90%;
 min-height: 80vh;
 position: relative;
@@ -27,7 +27,7 @@ flex-wrap: wrap;
 align-items: center;
 justify-content: space-around;
 overflow: hidden;
-${props => props.blur ? 'filter:blur(2px);': ''}
+${props => props.$blur ? 'filter:blur(2px);': ''}
 transition:.2s;
 box-sizing: border-box;
 margin-bottom: 100px;
@@ -91,7 +91,7 @@ const SkillsContainer = ({popup, SetPopUpHandler, popuptext} : Props) => {
     return ( 
         <>
         
-    <Wrapper blur={popup}>
+    <Wrapper $blur={popup}>
         <Desc>
             <Title>I offer you my skills...</Title>
             <Description>I don't want to categorize my skills on a scale of 1 to 10, so for each skill I included a scope of knowledge on the subject </Description>

@@ -6,23 +6,29 @@ import ContactData from "../ContactData/contactData";
 
 const Wrapper = styled.div`
 width: 90%;
-height: 90vh;
+min-height: 90vh;
 // background-color: grey;
+position:relative;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;`
 const ContactDataContainer = styled.div`
 position: relative;
-// border: 2px solid white;
-// background-color:#AF8FE3;
 background-color: white;
 border-radius: 30px;
+margin-bottom: 150px;
+box-sizing: border-box;
 width: 80%;
 height: 80%;
+min-height: 80vh;
 display: flex;
-flex-direction: row;
-overflow: hidden;`
+flex-direction: column-reverse;
+overflow: hidden;
+@media only screen and (min-width: 1200px){
+    flex-direction: row;
+    margin-bottom: 50px;
+}`
 
 const ContactContainer = () => {
     return (  

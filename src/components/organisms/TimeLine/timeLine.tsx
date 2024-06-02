@@ -53,7 +53,7 @@ background-color: #6304D6;
 width: 10px;
 border-radius:20px;
 height: 10%;
-animation: move 10s 3.5s linear both;
+animation: move 5s 2.5s linear both;
 
 @keyframes move{
     0% {
@@ -95,62 +95,8 @@ top: ${props => props.position * 20 -1}%;
 left:-10px;
 background-color: #6304D6;
 border-radius: 50%;
-animation: apear 2s ${props => props.time}s both;
+animation: apear 1s ${props => props.time}s both;
 box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-
-@keyframes apear {
-    0% { 
-        width: 0px;
-        height: 0px;
-        left:0;
-    }
-    50%{
-        width: 40px;
-        height: 40px;
-        left:-15px;
-    }
-    100%{
-        width: 30px;
-        height: 30px;
-        left:-10px;
-    }
-}`
-const TimeStop2 = styled.div`
-width: 20px;
-height: 20px;
-position: absolute;
-top: 59%;
-left:-10px;
-background-color: #6304D6;
-border-radius: 50%;
-animation: apear 2s 6s both;
-
-@keyframes apear {
-    0% { 
-        width: 0px;
-        height: 0px;
-        left:0;
-    }
-    50%{
-        width: 40px;
-        height: 40px;
-        left:-15px;
-    }
-    100%{
-        width: 30px;
-        height: 30px;
-        left:-10px;
-    }
-}`
-const TimeStop3 = styled.div`
-width: 20px;
-height: 20px;
-position: absolute;
-top: 79%;
-left:-10px;
-background-color: #6304D6;
-border-radius: 50%;
-animation: apear 2s 9s both;
 
 @keyframes apear {
     0% { 
@@ -218,21 +164,21 @@ const TimeLine = () => {
     return ( <Wrapper>
         <Line>
         <Color />
-        <TimeStop time="5" position='1'>
-            <Arrow time="6"></Arrow>
-            <Desc time="7.5"> 2013 - 2017 Technik Informatyk <br/> Zespół Szkól Ekonomicznych im. Stanisława Staszica</Desc>
+        <TimeStop time="3" position='1'>
+            <Arrow time="3.5"></Arrow>
+            <Desc time="4"> 2013 - 2017 Technik Informatyk <br/> Zespół Szkól Ekonomicznych im. Stanisława Staszica</Desc>
         </TimeStop>
-        <TimeStop time="7" position='2'>
-        <Arrow time="8"></Arrow>
-            <Desc time="9.5"> 2017-2020 Informatyk <br/> Impakt S.A </Desc>
+        <TimeStop time="4" position='2'>
+        <Arrow time="4.5"></Arrow>
+            <Desc time="5"> 2017-2020 Informatyk <br/> Impakt S.A </Desc>
         </TimeStop>
-        <TimeStop time="9" position='3'>
-        <Arrow time="10"></Arrow>
-            <Desc time="11.5"> 2018 - 2022 Inżynier aplikacji internetowych i mobilnych <br/> Collegium Da Vinci</Desc>
+        <TimeStop time="5" position='3'>
+        <Arrow time="5.5"></Arrow>
+            <Desc time="6"> 2018 - 2022 Inżynier aplikacji internetowych i mobilnych <br/> Collegium Da Vinci</Desc>
         </TimeStop>
-        <TimeStop time="11" position='4'>
-        <Arrow time="12"></Arrow>
-            <Desc time="13.5"> 2020 - obecnie Administrator IT <br/> ASTAT Sp z.o.o.</Desc>
+        <TimeStop time="6" position='4'>
+        <Arrow time="6.5"></Arrow>
+            <Desc time="7"> 2020 - obecnie Administrator IT <br/> ASTAT Sp z.o.o.</Desc>
         </TimeStop>
         </Line>
         

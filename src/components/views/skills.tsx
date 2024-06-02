@@ -22,7 +22,7 @@ align-items: center;
 justify-content: space-around;
 overflow:hidden;
 // ${props => props.$displayToggleSkills ? '': 'display:none;'}
-${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'animation: slideInSkills .5s linear both;':'animation: slideOutSkills .5s 1s linear both;'}
+${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'animation: slideInSkills .5s linear both;':'animation: slideOutSkills .5s .8s linear both;'}
 
 @keyframes slideInSkills {
     0%{

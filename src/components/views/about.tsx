@@ -8,7 +8,7 @@ import GoBack from 'components/atoms/goBack/goBack';
 import { useDispatch } from 'react-redux';
 import { displayView } from 'components/Redux/features/displayView/displaySlice';
 
-const Wrapper = styled.div<{displayToggle: boolean, $firstRun: boolean}>`
+const Wrapper = styled.div<{$displaytoggle: boolean, $firstRunAbout: boolean}>`
 width: 100%;
 // height:120vh;
 min-height: 200vh;
@@ -20,8 +20,8 @@ flex-direction: column;
 align-items: center;
 justify-content: space-around;
 background-color: red;
-// ${props => props.displayToggle ? '': 'display:none;'}
-${props => props.$firstRun ? 'display: none;': props.displayToggle ? '': 'animation: AboutOut .5s .6s linear both;'}
+// ${props => props.$displaytoggle ? '': 'display:none;'}
+${props => props.$firstRunAbout ? 'display: none;': props.$displaytoggle ? '': 'animation: AboutOut .5s .6s linear both;'}
 // display: none;
 overflow:hidden;
 // box-sizing:border-box;
@@ -51,21 +51,25 @@ const About = () => {
     const dispatch = useDispatch();
     const [scrollFlag, setScrollFlag] = useState<boolean>(false);
     const [firstRunAbout, setFirstRunAbout] = useState<boolean>(true);
-    console.log(display);
     
+    
+    useEffect(() => {
+        if(display === 'about'){
+           setFirstRunAbout(false);
+        }
+    }, [display]);
     useEffect(() => {
         const scrollDown = () => {
             const el = document.getElementById('about');
-            setFirstRunAbout(false);
             if(el){
                 el.scrollIntoView({behavior: 'smooth'});
             }
         }
-        if(display === 'about'){
+        if(display === 'about' && !firstRunAbout){
             scrollDown();
         }
         return scrollDown
-    }, [display]);
+    }, [display, firstRunAbout]);
     useEffect(() => {
         const scrollUp = () => {
             const el = document.getElementById('main');
@@ -74,22 +78,11 @@ const About = () => {
             }
         }
         if(display === 'main'){
+            
             scrollUp();
         }
         return scrollUp
     }, [display]);
-
-    // const handleOnClick = () => {
-    //     const top = document.getElementById("main");
-    //     if(top){
-    //         console.log(top);
-    //         // top.scrollIntoView({behavior: 'smooth'});
-    //         globalThis.scrollTo({top:0, left:0, behavior: 'smooth'})
-    //     }
-    //     else{
-    //         console.log('Top is null');
-    //     }
-    // }
 
     useEffect(() => {
 
@@ -104,10 +97,12 @@ const About = () => {
             }
         }
 
-    }, [scrollFlag])
+    }, [scrollFlag]);
+
+    console.log(firstRunAbout);
 
 
-    return ( <Wrapper displayToggle={display === 'about' ? true:false} id='about' $firstRun={firstRunAbout}>
+    return ( <Wrapper $displaytoggle={display === 'about' ? true:false} id='about' $firstRunAbout={firstRunAbout}>
         <AboutContainer />
         <TimeLine /> 
         <GoBack  setScrollFlag={setScrollFlag}  />

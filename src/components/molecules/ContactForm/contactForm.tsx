@@ -8,7 +8,7 @@ import { Button } from '@mui/material';
 
 
 const Wrapper = styled.div`
-width: 50%;
+width: 100%;
 height: 100%;
 // border: 2px solid blue;
 position: relative;
@@ -16,33 +16,47 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media only screen and (min-width:1200px){
+  width: 50%;
+}
 `
 
 const Container = styled.div`
-width: 90%;
-height: 90%;
-background-color: yelllow;
+width: 100%;
+height: 100%;
+// background-color: yellow;
+// border: 2px solid red;
 border-radius: 20px;
+position:relative;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 box-sizing: border-box;
-padding: 30px;
+padding: 10px;
 overflow: hidden;
+@media only screen (min-width: 1200px){
+  width: 90%;
+  padding: 30px;
+}
 `
 
 const FormContainer = styled.form`
 width: 100%;
-height: 60%;
+height: 80%;
 // background-color: red;
 display: flex;
 flex-direction: column;
-justify-content: space-around;`
+justify-content: space-around;
+@media only screen and (min-width:1200px){
+  height: 60%;
+}`
 
 const EmailDesc = styled.h1`
-color: white;
-font-family: Montserrat;`
+color: black;
+font-family: Montserrat;
+text-align:center;
+// background-color:blue;`
 
 
 const ContactForm = () => {
@@ -116,8 +130,8 @@ const ContactForm = () => {
     return ( <Wrapper> 
         
         <Container>
-          <EmailDesc>Contact me by email</EmailDesc>
-        <FormContainer onSubmit={handleSubmit}>
+          <EmailDesc>Contact me via form</EmailDesc>
+          <FormContainer onSubmit={handleSubmit}>
             {/* <FormControl > */}
             {/* style={{background: "white"}} */}
             <TextField id="outlined-basic" label="Your company name" variant="outlined" style={{background: "white"}}  margin="dense" required/>
@@ -128,7 +142,7 @@ const ContactForm = () => {
             {/* <FormControl > */}
             <Textarea aria-label="minimum height" minRows={3} placeholder="Minimum 3 rows"  required />
             {/* </FormControl> */}
-            <Button type="submit">Wyślij wiadomość</Button>
+            <Button type="submit">Send message</Button>
           </FormContainer>
             
         </Container>

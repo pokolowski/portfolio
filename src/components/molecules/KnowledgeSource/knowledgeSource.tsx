@@ -69,8 +69,8 @@ const KnowledgeSource = ({title, skills} :Props) => {
     <Wrapper>
         <Title> <p><FontAwesomeIcon icon={faSchool} /><br/>{title}</p></Title>
         <SkillsContainer>
-            {skills.map((skill) => (
-                <Logo png={skill} />
+            {skills.map((skill, index) => (
+                <Logo png={skill} key={index} />
             ))}
         </SkillsContainer>
     </Wrapper>

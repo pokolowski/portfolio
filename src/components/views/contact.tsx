@@ -9,7 +9,8 @@ import ContactContainer from 'components/organisms/ContactContainer/contactConta
 
 const Wrapper = styled.div<{$displayTogle: boolean, $scrollFlag: boolean, $firstRun: boolean}>`
 width: 100%;
-height:100vh;
+min-width: 350px;
+min-height:100vh;
 background: rgb(2,0,36);
 // background:white;
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
@@ -19,7 +20,7 @@ top: 0;
 left: 0;
 // animation: slideIn .5s linear both;
 display: flex;
-${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideInContact .5s linear both;':'animation: slideOutContact .5s linear both;'}
+${props => props.$firstRun ? 'display:none;':props.$scrollFlag ? 'animation: slideInContact .5s linear both;':'animation: slideOutContact .5s .5s linear both;'}
 justify-content: center;
 
 @keyframes slideInContact {
@@ -49,40 +50,28 @@ const Contact = () => {
 
     useEffect( () => {
         if(display === 'contact' && scrollFlag===false){
-            // const el = document.getElementById("contact");
-            // if(el){
-            //     el.scrollIntoView({behavior: 'smooth'})
-            //     console.log('jestem tu i scrolluje');
-            // }
             setScrollFlag(true);
             setFirstRun(false);
         }
         if(display != 'contact'){
             setScrollFlag(false);
-            // setFirstRun(true);
         }
     }, [display]);
+    const handleOnClick = () => {
+        const top = document.getElementById("contact");
+        if(top){
+            top.scrollIntoView({behavior: 'smooth'});
+        }
+        else{
+            console.log('Top is null');
+        }
+    }
 
-    // useEffect(() => {
-
-    //     if(scrollFlag){
-    //         const el = document.getElementById('main');
-    //         if(el){
-    //             el.scrollIntoView({behavior: 'smooth'});
-    //             setTimeout(() => {
-    //                 dispatch(displayView('main'));
-    //             }, 1000)
-    //             setScrollFlag(false);
-    //             console.log("scrolluje");
-    //         }
-    //     }
-
-    // }, [scrollFlag])
 
     return ( 
     <Wrapper $displayTogle= {display === 'contact' ? true:false} $scrollFlag={scrollFlag} $firstRun={firstRun} id="contact">
         <ContactContainer />
-        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag}/>
+        <GoBack rotate="90 stopni" setScrollFlag={setScrollFlag} handleOnClick={handleOnClick}/>
     </Wrapper>  );
 }
  

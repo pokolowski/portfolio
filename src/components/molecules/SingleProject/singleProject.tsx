@@ -27,11 +27,11 @@ margin-bottom: 50px;
     height: 100%;
 }
 `
-const LogoContainer = styled.div<{bgImage: string, title?:string}>`
+const LogoContainer = styled.div<{$bgImage: string, title?:string}>`
 width: 100%;
 height: 220px;
 // background-color: red;
-background-image:url(${props => props.bgImage});
+background-image:url(${props => props.$bgImage});
 background-repeat: no-repeat;
 background-size: contain;
 background-position: center;
@@ -97,13 +97,13 @@ type Props={
 const SingleProject = ({title='', logo, stack=[], description=''}: Props) => {
     return ( 
         <Wrapper>
-        <LogoContainer bgImage={logo} title={title} />
+        <LogoContainer $bgImage={logo} title={title} />
             
             {/* <TitleContainer href="www.ankietujto.pl"> go to page</TitleContainer> */}
             <StackContainer>
-                {stack.map((singleStack) => (
+                {stack.map((singleStack, index) => (
                     // <StackLogo path={singleStack} />
-                    <Stack color={singleStack}>{singleStack}</Stack>
+                    <Stack color={singleStack} key={index}>{singleStack}</Stack>
                 ))}
             </StackContainer>
             <DescContainer>{description}</DescContainer>

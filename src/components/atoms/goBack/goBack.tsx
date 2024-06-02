@@ -13,8 +13,8 @@ right: 50px;
 // left:0px;
 // transform: translateX(500%);
 background-color: #DEEE22;
-width: 70px;
-height: 70px;
+width: 70px !important;
+height: 70px !important;
 border-radius: 50%;
 display: flex;
 align-items: center;
@@ -22,10 +22,10 @@ justify-content: center;
 overflow: hidden;
 cursor: pointer;
 box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-animation: show .5s 1s both;
+animation: showGoBackButton .5s 1s both;
 
 
-@keyframes show {
+@keyframes showGoBackButton {
     0%{ opacity: 0;}
     100% { opacity: 1;}
 }

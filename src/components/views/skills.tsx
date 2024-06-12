@@ -13,7 +13,7 @@ min-width: 350px;
 min-height: 150vh;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
-position: absolute;
+position: relative;
 top: 0;
 left:0;
 display: flex;
@@ -23,6 +23,7 @@ justify-content: space-around;
 overflow:hidden;
 // ${props => props.$displayToggleSkills ? '': 'display:none;'}
 ${props => props.$firstRunSkills ? 'display:none;':props.$scrollFlagSkills ? 'animation: slideInSkills .5s linear both;':'animation: slideOutSkills .5s .8s linear both;'}
+overflow:hidden;
 
 @keyframes slideInSkills {
     0%{

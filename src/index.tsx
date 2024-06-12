@@ -15,6 +15,15 @@ import '@fontsource/roboto/700.css';
 import Skills from 'components/views/skills';
 import CommingSoon from 'components/views/commingSoon';
 import Projects from 'components/views/projects';
+import styled from 'styled-components';
+
+
+const RootContainer = styled.div`
+position: relative;
+width: 100%;
+min-height: 100vh;
+overflow:hidden;
+// background-color: red;`
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,11 +32,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <RootContainer>
       <MainPage />
       <About />
       <Contact />
       <Skills />
       <Projects />
+      </RootContainer>
     </Provider>
     {/* <CommingSoon /> */}
   </React.StrictMode>

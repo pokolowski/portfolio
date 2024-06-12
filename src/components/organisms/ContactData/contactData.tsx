@@ -22,7 +22,7 @@ height: 70%;
 display: flex;
 flex-direction: column;
 @media only screen and (min-width: 1200px){
-    width: 70%;
+    width: 50%;
 }
 `
 const ContactDataRow = styled.div`
@@ -46,10 +46,10 @@ const ContactData = () => {
                 <FontAwesomeIcon icon={faEnvelope} />
                 <p>okolowski.p@gmail.com</p>
             </ContactDataRow>
-            {/* <ContactDataRow>
-                <FontAwesomeIcon icon={faSquareGithub} />
-                <p>https://github.com/pokolowski</p>
-            </ContactDataRow> */}
+            <ContactDataRow>
+                <FontAwesomeIcon icon={faGithub} />
+                <p><a href="https://github.com/pokolowski" target="_blank">https://github.com/pokolowski</a></p>
+            </ContactDataRow>
         </Container>
     </Wrapper> );
 }

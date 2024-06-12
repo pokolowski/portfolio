@@ -15,13 +15,14 @@ min-height: 200vh;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
 position: relative;
+top:100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-around;
 background-color: red;
 // ${props => props.$displaytoggle ? '': 'display:none;'}
-${props => props.$firstRunAbout ? 'display: none;': props.$displaytoggle ? '': 'animation: AboutOut .5s .6s linear both;'}
+${props => props.$firstRunAbout ? 'display: none;': props.$displaytoggle ? '': 'animation: AboutOut .9s .6s linear both;'}
 // display: none;
 overflow:hidden;
 // box-sizing:border-box;
@@ -99,7 +100,7 @@ const About = () => {
 
     }, [scrollFlag]);
 
-    console.log(firstRunAbout);
+    // console.log(firstRunAbout);
 
 
     return ( <Wrapper $displaytoggle={display === 'about' ? true:false} id='about' $firstRunAbout={firstRunAbout}>

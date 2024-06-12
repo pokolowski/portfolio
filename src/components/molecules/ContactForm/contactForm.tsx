@@ -58,6 +58,33 @@ font-family: Montserrat;
 text-align:center;
 // background-color:blue;`
 
+const SendStatus = styled.p<{$sendInfo: string}>`
+color: #3debd7;
+animation: showSendStatus 2s both;
+// font-weight: bold;
+font-size: 20px;
+display: none;
+${props => props.$sendInfo === 'Mail Sent' ? 'animation: showSendStatus 10s both;':''}
+
+@keyframes showSendStatus {
+  0%{
+    display: inline;
+    transform: translateY(-100px);
+  }
+  5%{
+    transform: translateY(0);
+  }
+  94%{
+    transform: translateY(0);
+  }
+  99%{
+    transform: translateY(0);
+  }
+  100%{
+    display: none;
+  }
+}`
+
 
 const ContactForm = () => {
 
@@ -114,33 +141,51 @@ const ContactForm = () => {
       `,
       );
     const [formData, setFormData] = useState<{senderAddress: string, subject: string, content: string}>({senderAddress: '', subject: '', content: ''})
+    const [SendInfo, setSendInfo] = useState<string>('');
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = async (event: any) => {
       event.preventDefault();
-      setFormData({
-        senderAddress: event.target[0].value,
-        subject: event.target[2].value,
-        content: event.target[4].value
-      });
+      fetch('http://localhost:3300/api/sendmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'  // Add this line
+          },
+          body: JSON.stringify({
+            company: event.target[0].value,
+            subject: event.target[2].value,
+            content: event.target[4].value
+          })
+      }).then(response => response.json())
+      .then(data => setSendInfo(data.res))
+      .catch(err => console.log(err))
+      event.target[0].value = ''
+      event.target[2].value = ''
+      event.target[4].value = ''
+      // setFormData({
+      //   senderAddress: event.target[0].value,
+      //   subject: event.target[2].value,
+      //   content: event.target[4].value
+      // });
     }
 
-    useEffect(() => {
-        console.log(formData);
-    }, [formData]);
+    // useEffect(() => {
+    //     console.log(formData);
+    // }, [formData]);
     return ( <Wrapper> 
         
         <Container>
           <EmailDesc>Contact me via form</EmailDesc>
+          <SendStatus $sendInfo = {SendInfo}>Mail Sent</SendStatus>
           <FormContainer onSubmit={handleSubmit}>
             {/* <FormControl > */}
             {/* style={{background: "white"}} */}
-            <TextField id="outlined-basic" label="Your company name" variant="outlined" style={{background: "white"}}  margin="dense" required/>
+            <TextField id="outlined-basic" label="Your email" variant="outlined" style={{background: "white"}}  margin="dense" type="email" required/>
             {/* </FormControl> */}
             {/* <FormControl > */}
             <TextField id="outlined-basic" label="Subject" variant="outlined" style={{background: "white"}} margin="dense" required />
             {/* </FormControl> */}
             {/* <FormControl > */}
-            <Textarea aria-label="minimum height" minRows={3} placeholder="Minimum 3 rows"  required />
+            <Textarea aria-label="minimum height" minRows={3} placeholder=""  required />
             {/* </FormControl> */}
             <Button type="submit">Send message</Button>
           </FormContainer>

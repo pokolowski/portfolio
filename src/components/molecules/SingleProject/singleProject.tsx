@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import GithubBtn from "components/atoms/githubButton/githubBtn";
 
 const Wrapper = styled.div`
 width: 100%;
@@ -92,9 +93,10 @@ type Props={
     title: string,
     stack: string[],
     description: string,
-    logo: string
+    logo: string,
+    url: string
 }
-const SingleProject = ({title='', logo, stack=[], description=''}: Props) => {
+const SingleProject = ({title='', logo, stack=[], description='', url}: Props) => {
     return ( 
         <Wrapper>
         <LogoContainer $bgImage={logo} title={title} />
@@ -106,6 +108,7 @@ const SingleProject = ({title='', logo, stack=[], description=''}: Props) => {
                     <Stack color={singleStack} key={index}>{singleStack}</Stack>
                 ))}
             </StackContainer>
+            <GithubBtn url={url} />
             <DescContainer>{description}</DescContainer>
         </Wrapper>
      );

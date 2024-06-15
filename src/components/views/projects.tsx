@@ -39,7 +39,8 @@ justify-content: center;
     }
     100%{
         transform: translateY(-100%);
-        display:none;
+        // display:none;
+        position:absolute;
     }
 }
 `

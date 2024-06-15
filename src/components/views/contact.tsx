@@ -39,6 +39,7 @@ overflow:hidden;
     100%{
         transform: translate(-100%);
         display:none;
+        position:absolute;
     }
 }
 

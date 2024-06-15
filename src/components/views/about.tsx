@@ -8,7 +8,7 @@ import GoBack from 'components/atoms/goBack/goBack';
 import { useDispatch } from 'react-redux';
 import { displayView } from 'components/Redux/features/displayView/displaySlice';
 
-const Wrapper = styled.div<{$displaytoggle: boolean, $firstRunAbout: boolean}>`
+const Wrapper = styled.div<{$displaytoggle: boolean, $firstRunAbout: boolean, $displayNone: boolean}>`
 width: 100%;
 // height:120vh;
 min-height: 200vh;
@@ -21,7 +21,7 @@ flex-direction: column;
 align-items: center;
 justify-content: space-around;
 background-color: red;
-// ${props => props.$displaytoggle ? '': 'display:none;'}
+// ${props => props.$displayNone ? 'display:none;': ''}
 ${props => props.$firstRunAbout ? 'display: none;': props.$displaytoggle ? '': 'animation: AboutOut .9s .6s linear both;'}
 // display: none;
 overflow:hidden;
@@ -35,6 +35,7 @@ flex-wrap:wrap;
     }
     100%{
         display: none;
+        position: absolute;
     }
 }
 
@@ -52,24 +53,23 @@ const About = () => {
     const dispatch = useDispatch();
     const [scrollFlag, setScrollFlag] = useState<boolean>(false);
     const [firstRunAbout, setFirstRunAbout] = useState<boolean>(true);
+    const [displayNone, setDisplayNone] = useState<boolean>(false);
     
     
     useEffect(() => {
         if(display === 'about'){
            setFirstRunAbout(false);
+           setDisplayNone(false);
+           console.log('wlaczam');
         }
     }, [display]);
     useEffect(() => {
-        const scrollDown = () => {
+        if(display === 'about' && !firstRunAbout){
             const el = document.getElementById('about');
             if(el){
                 el.scrollIntoView({behavior: 'smooth'});
             }
         }
-        if(display === 'about' && !firstRunAbout){
-            scrollDown();
-        }
-        return scrollDown
     }, [display, firstRunAbout]);
     useEffect(() => {
         const scrollUp = () => {
@@ -81,6 +81,10 @@ const About = () => {
         if(display === 'main'){
             
             scrollUp();
+        }
+        if(display != 'main' && display != 'about'){
+            console.log('wylaczam');
+            setDisplayNone(true);
         }
         return scrollUp
     }, [display]);
@@ -103,7 +107,7 @@ const About = () => {
     // console.log(firstRunAbout);
 
 
-    return ( <Wrapper $displaytoggle={display === 'about' ? true:false} id='about' $firstRunAbout={firstRunAbout}>
+    return ( <Wrapper $displaytoggle={display === 'about' ? true:false} id='about' $firstRunAbout={firstRunAbout} $displayNone={displayNone}>
         <AboutContainer />
         <TimeLine /> 
         <GoBack  setScrollFlag={setScrollFlag}  />

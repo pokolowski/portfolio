@@ -35,7 +35,7 @@ justify-content: center;
     }
     100%{
         transform: translateY(-100%);
-        // display:none;    //doesnt work on firefox
+        display:none;    //doesnt work on firefox
         position:absolute;
     }
 }

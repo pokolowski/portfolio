@@ -35,7 +35,7 @@ overflow:hidden;
     }
     100%{
         transform: translate(-100%);
-        display:none;
+        display:none;   //doesnt work on firefox
         position:absolute;
     }
 }

@@ -10,7 +10,6 @@ import { Button } from '@mui/material';
 const Wrapper = styled.div`
 width: 100%;
 height: 100%;
-// border: 2px solid blue;
 position: relative;
 display: flex;
 flex-direction: column;
@@ -24,8 +23,6 @@ align-items: center;
 const Container = styled.div`
 width: 100%;
 height: 100%;
-// background-color: yellow;
-// border: 2px solid red;
 border-radius: 20px;
 position:relative;
 display: flex;
@@ -44,7 +41,6 @@ overflow: hidden;
 const FormContainer = styled.form`
 width: 100%;
 height: 80%;
-// background-color: red;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
@@ -55,13 +51,11 @@ justify-content: space-around;
 const EmailDesc = styled.h1`
 color: black;
 font-family: Montserrat;
-text-align:center;
-// background-color:blue;`
+text-align:center;`
 
 const SendStatus = styled.p<{$sendInfo: string}>`
 color: #3debd7;
 animation: showSendStatus 2s both;
-// font-weight: bold;
 font-size: 20px;
 display: none;
 ${props => props.$sendInfo === 'Mail Sent' ? 'animation: showSendStatus 10s both;':''}
@@ -148,7 +142,7 @@ const ContactForm = () => {
       fetch('http://localhost:3300/api/sendmail', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'  // Add this line
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
             company: event.target[0].value,
@@ -161,32 +155,17 @@ const ContactForm = () => {
       event.target[0].value = ''
       event.target[2].value = ''
       event.target[4].value = ''
-      // setFormData({
-      //   senderAddress: event.target[0].value,
-      //   subject: event.target[2].value,
-      //   content: event.target[4].value
-      // });
     }
 
-    // useEffect(() => {
-    //     console.log(formData);
-    // }, [formData]);
     return ( <Wrapper> 
         
         <Container>
           <EmailDesc>Contact me via form</EmailDesc>
           <SendStatus $sendInfo = {SendInfo}>Mail Sent</SendStatus>
           <FormContainer onSubmit={handleSubmit}>
-            {/* <FormControl > */}
-            {/* style={{background: "white"}} */}
             <TextField id="outlined-basic" label="Your email" variant="outlined" style={{background: "white"}}  margin="dense" type="email" required/>
-            {/* </FormControl> */}
-            {/* <FormControl > */}
             <TextField id="outlined-basic" label="Subject" variant="outlined" style={{background: "white"}} margin="dense" required />
-            {/* </FormControl> */}
-            {/* <FormControl > */}
             <Textarea aria-label="minimum height" minRows={3} placeholder=""  required />
-            {/* </FormControl> */}
             <Button type="submit">Send message</Button>
           </FormContainer>
             

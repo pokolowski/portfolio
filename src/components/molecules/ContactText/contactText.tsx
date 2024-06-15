@@ -5,7 +5,6 @@ const Wrapper = styled.div`
 width: 80%;
 height: 20%;
 text-align: center;
-// border: 2px solid black;
 font-family: Montserrat;
 color: white;
 `

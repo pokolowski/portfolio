@@ -5,13 +5,10 @@ import AboutText from 'components/molecules/AboutText/aboutText';
 const Wrapper = styled.div`
 width: 90%;
 min-height: 90vh;
-// background-color: black;
 box-sizing: border-box;
 padding:15px;
-// opacity: .1;
 display: flex;
 justify-content: space-between;
-// overflow:hidden;
 font-size: 5px;
 
 

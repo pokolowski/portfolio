@@ -7,14 +7,11 @@ import Photo from 'assets/zdj2.png';
 const Wrapper = styled.div`
 width: 80vw;
 height: 80vw;
-// background-color: red;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
 @media only screen and (min-width: 700px){
-    // min-width:500px;
-    // min-height: 200px;
     width: 40vw;
     height: 40vw;
 }

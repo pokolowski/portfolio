@@ -20,7 +20,6 @@ min-height: 80vh;
 position: relative;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
-// background:red;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -67,8 +66,6 @@ type Props = {
 }
 
 const SkillsContainer = ({popup, SetPopUpHandler, popuptext} : Props) => {
-    // const [popup, setPopUp] = useState<boolean>(false);
-    // const [popuptext, setpopuptext] = useState<string>('');
 
     const SkillsDesc = [
         {skill:'HTML', Desc:"As a frontend developer proficient in HTML, I excel in crafting clean, semantic markup using the latest HTML5 standards. My expertise extends to integrating HTML seamlessly with CSS and JavaScript to create visually stunning, responsive interfaces. "},

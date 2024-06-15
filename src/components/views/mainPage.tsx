@@ -7,9 +7,6 @@ const Wrapper = styled.div`
 width: 100%;
 min-height: 100vh;
 min-width:350px;
-// background-color:#323133;
-// background-image: url(${Bg});
-// background-repeat: no-repeat;
 background: rgb(2,0,36);
 background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(40,2,87,1) 0%, rgba(2,0,36,1) 100%);
 display: flex;
@@ -20,7 +17,6 @@ position: absolute;
 top:0;
 left:0;
 
-// z-index:5;
  `
 
 const MainPage = () => {

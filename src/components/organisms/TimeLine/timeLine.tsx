@@ -3,21 +3,14 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 height:90vh;
-// min-height: 90vh;
-// max-height: 700px;
 box-sizing: border-box;
 width: 100%;
-// background-color: blue;
 display: flex;
 align-items: center;
-// justify-content: center;
-// margin-left: 20%;
 position:relative;
 
 
 @media only screen and (min-width: 700px){
-    
-    // min-height: 90vh;
     width: 50%;
 }
 `
@@ -137,7 +130,6 @@ animation: show 1s ${props => props.time}s both;
 
 `
 const Desc = styled.div<{time: string}>`
-// background-color: red;
 box-sizing: border-box;
 padding: 5px;
 min-width: 300px;

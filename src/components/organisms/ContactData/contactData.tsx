@@ -3,12 +3,11 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faSquareGithub } from "@fortawesome/free-brands-svg-icons";
-// import {faGithub}
+
 
 const Wrapper = styled.div`
 width: 100%;
 height: 30%;
-// border: 2px solid yellow;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -26,13 +25,11 @@ flex-direction: column;
 }
 `
 const ContactDataRow = styled.div`
-// width: 250px;
 width: 100%;
 height: 50px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-// background-color: blue;
 `
 
 const ContactData = () => {

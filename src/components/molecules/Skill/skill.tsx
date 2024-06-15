@@ -4,12 +4,9 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 width: 50%;
 height: 250px;
-// border: 2px solid black;
 display: flex;
 flex-direction: column;
 align-items: center;
-// background-color: white;
-// box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 border-radius: 20px;
 padding: 10px;
 box-sizing: border-box;
@@ -23,7 +20,6 @@ box-sizing: border-box;
 const Logo = styled.div<{png:string}>`
 width: 80%;
 height: 70%;
-// background-color: green;
 background-image:url(${props => props.png});
 background-size: contain;
 background-repeat: no-repeat;

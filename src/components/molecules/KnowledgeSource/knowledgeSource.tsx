@@ -12,10 +12,8 @@ display: flex;
 flex:1;
 flex-direction: column;
 align-items: ;
-// background-color: red;
 padding: 30px;
 box-sizing: border-box;
-// flex-wrap: wrap;
 @media only screen and (min-width: 1200px){
     // width: 18%;
 }
@@ -48,12 +46,9 @@ width: 50px;
 min-height: 50px;
 background-image:url(${props => props.png});
 background-repeat: no-repeat;
-// border: 2px solid red;
 background-size: contain;
 background-position: center;
-// background:red;
 overflow: hidden;
-// border: 1px solid yellow;
 @media only screen (min-width: 1200px){
     width: 30%;
 }`

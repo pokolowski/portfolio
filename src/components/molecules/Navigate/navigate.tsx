@@ -8,7 +8,6 @@ import { displayView } from 'components/Redux/features/displayView/displaySlice'
 const Wrapper = styled.div`
 width: 100%;
 height: 30%;
-// background-color: green;
 display: flex;
 align-items: center;
 justify-content: space-around;

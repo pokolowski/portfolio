@@ -7,18 +7,13 @@ height: 100%;
 color: white;
 font-size: 25px;
 font-family: Montserrat;
-// background-color: white;
 box-sizing: border-box;
 padding:30px;
 `
 const Span = styled.span`
 position: relative;
-// left: -50%;
 line-height: 30px;
-// background-color: #1F1F1F;
 font-size: 15px;
-// font-family:Montserrat;
-// display: none;
 width: 0%;
 overflow: hidden;
 animation: textIn .7s 1s linear both;
@@ -38,13 +33,11 @@ animation: textIn .7s 1s linear both;
 }
 `
 const Typing = styled.span`
-// display: none;
 height: 35px;
 display: block;
 width: 185px;
 wrap:no-wrap;
 position: relative;
-// background-color: red;
 
 overflow: hidden;
 animation: typingAnimation 1s steps(15, end),
@@ -69,14 +62,10 @@ width:190px;
 height: 100%;
 display: flex;
 align-items: center;
-// color: #AEA73F;
 color: #DEEE22;
 font-weight: bold;
-// line-height: 100%;
-// text-align: center;
 margin:0;
-padding: 0;
-// background-color: blue;`
+padding: 0;`
 
 
 const AboutText = () => {

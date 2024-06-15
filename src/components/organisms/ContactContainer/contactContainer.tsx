@@ -7,7 +7,6 @@ import ContactData from "../ContactData/contactData";
 const Wrapper = styled.div`
 width: 90%;
 min-height: 90vh;
-// background-color: grey;
 position:relative;
 display: flex;
 flex-direction: column;
